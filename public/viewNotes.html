@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>View your notes</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -47,6 +47,53 @@
         </div>
       </div>
     </footer>
+
+
+    <div id ="editNoteModal" class="modal" >
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Edit Title</label>
+                    <div class="control">
+                        <input class="input is-normal" id="editTitleInput" type = "text"/>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Edit Text</label>
+                    <div class="control">
+                        <input class="input is-normal" id="editTextInput" type = "text"/>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Change Tag</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id = "editTagInput">
+                                <option>Choose Tag</option>
+                                <option>Reminder</option>
+                                <option>Grocery</option>
+                                <option>Homework</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <label class="checkbox">
+                <input type="checkbox" id = "yesArchive">
+                Archive Note
+                </label>
+                <input id="noteId" type="hidden" />
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" onclick="saveEditedNote()">
+                    Save Changes
+                </button>
+                <button class="button" onclick="closeEditModal()">
+                    Cancel
+                </button>
+            </footer>
+        </div>
+    </div>
   </body>
 
 </html>
